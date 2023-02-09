@@ -18,9 +18,33 @@
 <body>
 
     <main class="bg-light">
-        <h1>
-            PROVA
-        </h1>
+        <div class="container">
+            <div class="row">
+                @foreach ($movies as $movie)  
+                <div class="col-4 py-4">
+                    <div class="card">
+                        <div class="card-header">
+                            {{$movie->title}}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{$movie->original_title}}
+                            </p>
+                            <h5 class="text-warning">
+                                {{$movie->nationality}}
+                            </h5>
+                            <p>
+                                {{$movie->date}}
+                            </p>
+                            <p>
+                                {{$movie->vote}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
     </main>
 
 </body>
